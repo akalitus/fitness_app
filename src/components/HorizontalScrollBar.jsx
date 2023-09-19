@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from "react";
-
 import { Box, Typography } from '@mui/material';
 import BodyPart from './BodyPart';
 import RightArrowIcon from '../assets/icons/right-arrow.png';
 import LeftArrowIcon from '../assets/icons/left-arrow.png';
 
-const HorizontalScrollBar = ({ data, bodyPart, setBodyPart }) => {
+const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
   const containerRef = useRef(null);
   const scrollStep = useRef(0);
 
@@ -40,10 +39,10 @@ const HorizontalScrollBar = ({ data, bodyPart, setBodyPart }) => {
     const leftArrow = document.querySelector(".left-arrow");
     const rightArrow = document.querySelector(".right-arrow");
 
-    leftArrow.disabled = scrollLeft === 0;
-    rightArrow.disabled = scrollLeft + clientWidth === containerWidth;
+    // leftArrow.disabled = scrollLeft === 0;
+    // rightArrow.disabled = scrollLeft + clientWidth === containerWidth;
 
-    if(scrollLeft === 0) {
+    if (scrollLeft === 0) {
       leftArrow.classList.add('arrow_disabled')
     } else if (scrollLeft + clientWidth === containerWidth) {
       rightArrow.classList.add('arrow_disabled')
@@ -77,17 +76,17 @@ const HorizontalScrollBar = ({ data, bodyPart, setBodyPart }) => {
   };
 
   return (
-    <>
-      <LeftArrow id="left-arrow" />
-      <RightArrow id="right-arrow" />
-      <div
-        className='contentWrapper container'
-        ref={containerRef} onScroll={handleContainerScroll}
+    <Box className="scrollWrapper">
+      <LeftArrow />
+      <RightArrow />
+      <Box
+        className='scrollContainer'
+        ref={containerRef}
+        onScroll={handleContainerScroll}
       >
 
         {data.map((item) => (
           <Box
-            className="contentElement element"
             key={item.id || item}
             itemID={item.id || item}
             title={item.id || item}
@@ -100,8 +99,8 @@ const HorizontalScrollBar = ({ data, bodyPart, setBodyPart }) => {
             />
           </Box>
         ))}
-      </div>
-    </>
+      </Box>
+    </Box>
   )
 }
 

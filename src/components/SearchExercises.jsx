@@ -4,43 +4,51 @@ import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { exerciseOptions, exerciseURL, fetchData } from '../utils/fetchData';
 import HorizontalScrollBar from './HorizontalScrollBar';
 
-const SearchExercises = ({ setEcercises, bodyPart, setBodyPart }) => {
+const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState('');
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
-    const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData(`${exerciseURL}/bodyPartList`, exerciseOptions);
+    try {
+      const fetchExercisesData = async () => {
+        const bodyPartsData = await fetchData(`${exerciseURL}/bodyPartList`, exerciseOptions);
 
-      setBodyParts(['all', ...bodyPartsData]);
+        setBodyParts(['all', ...bodyPartsData]);
+      }
+
+      fetchExercisesData();
+    } catch (err) {
+      console.log(err)
     }
-
-    fetchExercisesData();
   }, [])
 
-  const handleSearch = (e) => {
+  const handleInput = (e) => {
     setSearch(e.target.value.toLocaleLowerCase())
   }
 
-  const handleClick = async () => {
-    if (search) {
-      const exercisesData = await fetchData(exerciseURL, exerciseOptions)
+  const handleSearch = async () => {
+    try {
+      if (search) {
+        const exercisesData = await fetchData(exerciseURL, exerciseOptions)
 
-      const searcedData = exercisesData.filter((item) =>
-        item.name.toLocaleLowerCase().includes(search)
-        || item.target.toLocaleLowerCase().includes(search)
-        || item.equipment.toLocaleLowerCase().includes(search)
-        || item.bodyPart.toLocaleLowerCase().includes(search)
-      );
+        const searcedData = exercisesData.filter((item) =>
+          item.name.toLocaleLowerCase().includes(search)
+          || item.target.toLocaleLowerCase().includes(search)
+          || item.equipment.toLocaleLowerCase().includes(search)
+          || item.bodyPart.toLocaleLowerCase().includes(search)
+        );
 
-      window.scrollTo({
-        top: 1800,
-        left: 100,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: 1800,
+          left: 100,
+          behavior: 'smooth'
+        });
 
-      setSearch('');
-      setEcercises(searcedData);
+        setSearch('');
+        setExercises(searcedData);
+      }
+    } catch (err) {
+      console.log(err)
     }
   }
 
@@ -88,7 +96,7 @@ const SearchExercises = ({ setEcercises, bodyPart, setBodyPart }) => {
           }}
           height='76px'
           value={search}
-          onChange={handleSearch}
+          onChange={handleInput}
           placeholder='Search Exercises'
           type='text'
         />
@@ -109,7 +117,7 @@ const SearchExercises = ({ setEcercises, bodyPart, setBodyPart }) => {
             },
             height: '56px',
           }}
-          onClick={handleClick}
+          onClick={handleSearch}
         >
           Search
         </Button>
@@ -124,9 +132,8 @@ const SearchExercises = ({ setEcercises, bodyPart, setBodyPart }) => {
       >
         <HorizontalScrollBar
           data={bodyParts}
+          setBodyPart={setBodyPart}
           bodyPart={bodyPart}
-          setbodyPart={setBodyPart}
-
         />
       </Box>
     </Stack>

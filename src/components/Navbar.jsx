@@ -9,7 +9,7 @@ const Navbar = () => {
       direction='row'
       justifyContent='space-around'
       px='20px'
-      sx={{  
+      sx={{
         gap: {
           sm: '122px',
           xs: '24px'
@@ -17,6 +17,9 @@ const Navbar = () => {
         mt: {
           sm: '32px',
           xs: '20px'
+        },
+        ml: {
+          sm: '50px'
         },
         justifyContent: 'none',
       }}
