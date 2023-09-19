@@ -13,11 +13,8 @@ body {
   width: 0px;
 }
 
-.scrollWrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-}
 .scrollContainer {
+  overflow-x: scroll;
   display: flex;
 }
 

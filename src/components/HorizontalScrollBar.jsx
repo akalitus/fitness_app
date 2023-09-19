@@ -39,8 +39,8 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
     const leftArrow = document.querySelector(".left-arrow");
     const rightArrow = document.querySelector(".right-arrow");
 
-    // leftArrow.disabled = scrollLeft === 0;
-    // rightArrow.disabled = scrollLeft + clientWidth === containerWidth;
+    leftArrow.disabled = scrollLeft === 0;
+    rightArrow.disabled = scrollLeft + clientWidth === containerWidth;
 
     if (scrollLeft === 0) {
       leftArrow.classList.add('arrow_disabled')

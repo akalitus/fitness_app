@@ -50,8 +50,8 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       id='exercises'
       sx={{
         mt: {
-          lg: '212px',
-          xs: '70px'
+          lg: '100px',
+          xs: '50px'
         },
         ml: {
           sm: '50px'
@@ -71,7 +71,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         direction='row'
         sx={{
           gap: {
-            lg: '110px',
+            lg: '70px',
             xs: '50px'
           }
         }}
