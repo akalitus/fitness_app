@@ -9,10 +9,10 @@ const Navbar = () => {
       direction='row'
       justifyContent='space-around'
       px='20px'
-      sx={{
+      sx={{  
         gap: {
           sm: '122px',
-          xs: '40px'
+          xs: '24px'
         },
         mt: {
           sm: '32px',
@@ -37,6 +37,13 @@ const Navbar = () => {
         gap='40px'
         fontSize='24px'
         alignItems='flex-end'
+
+        sx={{
+          gap: {
+            xs: '24px',
+            sm: '40px'
+          }
+        }}
       >
         <Link
           to='/'
