@@ -1,0 +1,13 @@
+.hero-banner-img {
+  position: absolute;
+  right: 20px;
+  top: -50%;
+  height: 900px;
+  border-radius: 0 0 0 25%;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero-banner-img {
+    display: none;
+  }
+}

@@ -42,6 +42,7 @@ const ExerciseDetail = () => {
         name={exerciseDetail.name}
       />
       <SimilarExercises
+        currentExercise={exerciseDetail.name}
         targetMussleExercises={targetMussleExercises}
         equipmentExercises={equipmentExercises}
       />

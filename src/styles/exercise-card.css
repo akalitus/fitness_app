@@ -1,0 +1,20 @@
+.exercise__card {
+  background: #fff;
+  border-top: 4px solid #ff2625;
+  border-bottom-left-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-bottom: 10px;
+  transform: scale(1, 1);
+  transition: 0.3s all ease-in-out;
+}
+
+.exercise__card img {
+  width: 100%;
+}
+
+.exercise__card:hover {
+  transform: scale(1.1, 1.1);
+}

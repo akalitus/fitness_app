@@ -1,9 +1,9 @@
 import React from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import HorizontalScrollBar from './HorizontalScrollBar';
 import Loader from './Loader';
 
-const SimilarExercises = ({ targetMussleExercises, equipmentExercises }) => {
+const SimilarExercises = ({ currentExercise, targetMussleExercises, equipmentExercises }) => {
   return (
     <Box
       sx={{
@@ -11,21 +11,25 @@ const SimilarExercises = ({ targetMussleExercises, equipmentExercises }) => {
           lg: '100px',
           xs: '50px'
         },
-        ml: {
-          sm: '50px'
-        },
         p: '20px',
       }}
     >
       <Typography
-        variant='h3'
         mb={5}
+        sx={{
+          fontSize: {
+            lg: '48px',
+            xs: '36px'
+          },
+          lineHeight: '1.15'
+        }}
       >
         Exercises that target the same muscle group
       </Typography>
 
       <Box
         direction='row'
+        mb='80px'
         sx={{
           p: '2',
           position: 'relative'
@@ -34,15 +38,21 @@ const SimilarExercises = ({ targetMussleExercises, equipmentExercises }) => {
         {
           targetMussleExercises.length
             ? <HorizontalScrollBar
-              data={targetMussleExercises}
+              data={targetMussleExercises.filter((item) => item.name !== currentExercise)}
             />
             : <Loader />
         }
       </Box>
 
       <Typography
-        variant='h3'
         mb={5}
+        sx={{
+          fontSize: {
+            lg: '48px',
+            xs: '36px'
+          },
+          lineHeight: '1.15'
+        }}
       >
         Exercises that use the same equipment
       </Typography>
@@ -57,7 +67,7 @@ const SimilarExercises = ({ targetMussleExercises, equipmentExercises }) => {
         {
           targetMussleExercises.length
             ? <HorizontalScrollBar
-              data={equipmentExercises}
+              data={targetMussleExercises.filter((item) => item.name !== currentExercise)}
             />
             : <Loader />
         }

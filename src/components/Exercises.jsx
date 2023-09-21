@@ -53,9 +53,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
           lg: '100px',
           xs: '50px'
         },
-        ml: {
-          sm: '50px'
-        }
       }}
       position="relative"
       p='20px'
@@ -68,14 +65,22 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       </Typography>
 
       <Stack
-        direction='row'
+        align-items='center'
         sx={{
           gap: {
             lg: '70px',
-            xs: '50px'
-          }
+            xs: '30px'
+          },
+          display: {
+            sm: 'grid',
+            xs: 'flex'
+          },
+          gridTemplateColumns: {
+            lg: 'repeat(3, 1fr)',
+            sm: 'repeat(2, 1fr)',
+          },
+          gridAutoRows: 'max-content'
         }}
-        flexWrap='wrap'
         justifyContent='center'>
         {currentExercises.map((exercise, index) => (
 

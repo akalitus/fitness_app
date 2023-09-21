@@ -1,0 +1,28 @@
+.exercise-video-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.exercise-video {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-decoration: none;
+}
+
+.exercise-video img {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .exercise-video-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .exercise-video-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
