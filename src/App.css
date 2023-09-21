@@ -92,13 +92,20 @@ body {
   border: 1px solid #ff2625 !important;
 }
 
+.exercise-video-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .exercise-video {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 387px;
-  height: 381px;
   text-decoration: none;
+}
+
+.exercise-video img {
+  width: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -106,22 +113,30 @@ body {
     width: 300px;
     height: 300px;
   }
-
+  
   .react-horizontal-scrolling-menu--scroll-container {
     width: 500px;
   }
-
+  
   .hero-banner-img {
     display: none;
   }
-
+  
   .exercise-card {
     width: 320px;
   }
+}
 
-  .exercise-video {
-    width: 320px;
-    height: 300px;
+@media screen and (max-width: 900px) {
+  .exercise-video-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .exercise-video-container {
+    display: flex;
+    flex-direction: column;
   }
 }
 

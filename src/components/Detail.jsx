@@ -23,8 +23,6 @@ const Detail = ({ exerciseDetail }) => {
     },
   ]
 
-  console.log(exerciseDetail);
-
   return (
     <Stack
       gap='60px'
@@ -69,7 +67,7 @@ const Detail = ({ exerciseDetail }) => {
 
         {extraDetail.map((item) => (
           <Stack
-            key={item.name}
+            key={item.icon}
             direction='row'
             gap='24px'
             alignItems='center'
