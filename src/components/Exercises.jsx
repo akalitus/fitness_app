@@ -30,10 +30,10 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
       try {
         if (bodyPart === 'all') {
-          exercisesData = await fetchData(exerciseURL, exerciseOptions);
+          exercisesData = await fetchData(`${exerciseURL}/exercises`, exerciseOptions);
 
         } else {
-          exercisesData = await fetchData(`${exerciseURL}/bodyPart/${bodyPart}`, exerciseOptions);
+          exercisesData = await fetchData(`${exerciseURL}/exercises/bodyPart/${bodyPart}`, exerciseOptions);
         }
 
         setExercises(exercisesData);

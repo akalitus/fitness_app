@@ -3,8 +3,9 @@ import { Box, Typography } from '@mui/material';
 import BodyPart from './BodyPart';
 import RightArrowIcon from '../assets/icons/right-arrow.png';
 import LeftArrowIcon from '../assets/icons/left-arrow.png';
+import ExerciseCard from './ExerciseCard';
 
-const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
+const HorizontalScrollBar = ({ data, setBodyPart, bodyPart, isBodyParts }) => {
   const containerRef = useRef(null);
   const scrollStep = useRef(0);
 
@@ -36,8 +37,8 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
     const containerWidth = container.scrollWidth;
     const clientWidth = container.clientWidth;
 
-    const leftArrow = document.querySelector(".left-arrow");
-    const rightArrow = document.querySelector(".right-arrow");
+    const leftArrow = containerRef.current.parentNode.querySelector('.left-arrow');
+    const rightArrow = containerRef.current.parentNode.querySelector('.right-arrow');
 
     leftArrow.disabled = scrollLeft === 0;
     rightArrow.disabled = scrollLeft + clientWidth === containerWidth;
@@ -92,11 +93,15 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
             title={item.id || item}
             m='0 40px'
           >
-            <BodyPart
-              item={item}
-              bodyPart={bodyPart}
-              setBodyPart={setBodyPart}
-            />
+            {isBodyParts
+              ? <BodyPart
+                item={item}
+                bodyPart={bodyPart}
+                setBodyPart={setBodyPart}
+              />
+              : <ExerciseCard
+                exercise={item} />
+            }
           </Box>
         ))}
       </Box>
