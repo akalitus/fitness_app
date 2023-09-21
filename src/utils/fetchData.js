@@ -6,7 +6,8 @@ export const exerciseOptions = {
   }
 };
 
-export const exerciseURL = 'https://exercisedb.p.rapidapi.com/exercises';
+export const exerciseURL = 'https://exercisedb.p.rapidapi.com';
+export const youTubeSearchURL = 'https://youtube-search-and-download.p.rapidapi.com';
 
 export const fetchData = async (url, options) => {
   const response = await fetch(url, options);
