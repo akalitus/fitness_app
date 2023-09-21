@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-  if (!exerciseVideos.length) return 'Loading related videos...';
+  if (!exerciseVideos.length) return '';
 
   return (
     <Box
@@ -10,9 +10,6 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
         mt: {
           lg: '100px',
           xs: '50px'
-        },
-        ml: {
-          sm: '50px'
         },
       }}
       p='20px'

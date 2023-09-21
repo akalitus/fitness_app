@@ -34,9 +34,6 @@ const Detail = ({ exerciseDetail }) => {
           lg: '100px',
           xs: '50px'
         },
-        ml: {
-          sm: '50px'
-        },
         p: '20px',
         alignItems: 'center',
       }}    >
@@ -55,6 +52,7 @@ const Detail = ({ exerciseDetail }) => {
         }}>
         <Typography
           variant='h3'
+          textTransform='capitalize'
         >
           {name}
         </Typography>

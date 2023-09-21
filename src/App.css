@@ -1,3 +1,11 @@
+@import url('./styles/scroll-container.css');
+@import url('./styles/body-part-card.css');
+@import url('./styles/exercise-card.css');
+@import url('./styles/exercise-video.css');
+@import url('./styles/detail-image.css');
+@import url('./styles/hero-banner.css');
+@import url('./styles/search-btn.css');
+
 body {
   font-family: "Josefin Sans";
   background-color: #fffafb;
@@ -11,138 +19,4 @@ body {
 
 ::-webkit-scrollbar {
   width: 0px;
-}
-
-.scrollContainer {
-  overflow-y: hidden;
-  overflow-x: scroll;
-  display: flex;
-}
-
-.right-arrow,
-.left-arrow {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  bottom: -20px;
-  right: 140px;
-  transform: scale(1, 1);
-  transition: 0.3s all ease-in-out;
-}
-
-.right-arrow {
-  right: 80px;
-}
-
-.right-arrow:hover,
-.left-arrow:hover {
-  transform: scale(1.3, 1.3);
-}
-
-.arrow_disabled {
-  display: none;
-}
-
-.detail-image {
-  width: 729px;
-  height: 742px;
-}
-
-.hero-banner-img {
-  position: absolute;
-  right: 40px;
-  top: 0px;
-  width: 700px;
-  height: 900px;
-  margin-top: -330px;
-}
-
-.exercise-card {
-  width: 400px;
-  height: 445px;
-  background: #fff;
-  border-top: 4px solid #ff2625;
-  border-bottom-left-radius: 20px;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding-bottom: 10px;
-  transform: scale(1, 1);
-  transition: 0.3s all ease-in-out;
-}
-
-.exercise-card img {
-  height: 326px;
-}
-
-.bodyPart-card {
-  transform: scale(1, 1);
-  transition: 0.3s all ease-in-out;
-}
-
-.exercise-card:hover,
-.bodyPart-card:hover {
-  transform: scale(1.1, 1.1);
-}
-
-.search-btn:hover {
-  color: #ff2625 !important;
-  border: 1px solid #ff2625 !important;
-}
-
-.exercise-video-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.exercise-video {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  text-decoration: none;
-}
-
-.exercise-video img {
-  width: 100%;
-}
-
-@media screen and (max-width: 1200px) {
-  .detail-image {
-    width: 300px;
-    height: 300px;
-  }
-
-  .react-horizontal-scrolling-menu--scroll-container {
-    width: 500px;
-  }
-
-  .hero-banner-img {
-    display: none;
-  }
-
-  .exercise-card {
-    width: 320px;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .exercise-video-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .exercise-video-container {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .exercise-card {
-    width: 280px;
-  }
 }

@@ -6,7 +6,7 @@ const ExerciseCard = ({ exercise }) => {
   return (
     <Link
       to={`/exercise/${exercise.id}`}
-      className='exercise-card'
+      className='exercise__card'
     >
       <img
         src={exercise.gifUrl}

@@ -23,7 +23,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   }, [])
 
   const handleInput = (e) => {
-    setSearch(e.target.value.toLocaleLowerCase())
+    setSearch(e.target.value.toLocaleLowerCase());
   }
 
   const handleSearch = async () => {

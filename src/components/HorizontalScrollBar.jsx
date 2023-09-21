@@ -57,7 +57,7 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart, isBodyParts }) => {
     return (
       <Typography
         onClick={() => handleScroll("left")}
-        className="left-arrow"
+        className="left-arrow arrow_disabled"
       >
         <img src={LeftArrowIcon}
           alt="left-arrow" />
@@ -81,7 +81,7 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart, isBodyParts }) => {
       <LeftArrow />
       <RightArrow />
       <Box
-        className='scrollContainer'
+        className='scroll-container'
         ref={containerRef}
         onScroll={handleContainerScroll}
       >
