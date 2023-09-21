@@ -8,9 +8,12 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
     <Box
       sx={{
         mt: {
-          lg: '200px',
-          xs: '20px'
-        }
+          lg: '100px',
+          xs: '50px'
+        },
+        ml: {
+          sm: '50px'
+        },
       }}
       p='20px'
     >
