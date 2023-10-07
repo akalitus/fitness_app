@@ -1,0 +1,11 @@
+.detail-image {
+  width: 550px;
+  height: 550px;
+}
+
+@media screen and (max-width: 1200px) {
+  .detail-image {
+    width: 300px;
+    height: 300px;
+  }
+}

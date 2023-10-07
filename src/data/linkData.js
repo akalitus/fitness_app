@@ -1,0 +1,1 @@
+export const linkData = 'https://github.com/CodeSpellcaster'
